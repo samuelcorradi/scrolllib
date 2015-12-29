@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Biblioteca para interação de via scroll.</title>
+<script type="text/javascript" src="scrolllib.js"></script>
+</head>
+<body>
+<section id="home">
+	<p class="animate">Bem-vindo ao nosso website.</p>
+	<p>Elemento interno.</p>
+	<p>Elemento interno.</p>
+	<p>Elemento interno.</p>
+	<div id="divscroll" style="height: 300px; width: 300px; border: 1px solid black; overflow-y: scroll">
+		<p>Elemento interno.</p>
+		<p>Elemento interno.</p>
+		<p>Elemento interno.</p>
+		<p>Elemento interno.</p>
+		<p>Elemento interno.</p>
+		<p class="internal"><b>Elemento interno.</b></p>
+		<p>Elemento interno.</p>
+		<p>Elemento interno.</p>
+		<p>Elemento interno.</p>
+		<p>Elemento interno.</p>
+		<p>Elemento interno.</p>
+		<p>Elemento interno.</p>
+		<p>Elemento interno.</p>
+		<p>Elemento interno.</p>
+		<p>Elemento interno.</p>
+		<p>Elemento interno.</p>
+		<p>Elemento interno.</p>
+		<p>Elemento interno.</p>
+	</div>
+</section>
+<section id="product">
+	<p class="animate">Nossos produtos.</p>
+</section>
+
+
+<script type="text/javascript">
+window.onload = function()
+{
+
+	/*
+	 * Depois experimente passar
+	 * este elemento como segundo
+	 * parametro de scroll.Action.
+	 * Isso irá mudar o container
+	 * para este elemento, ao invés
+	 * de window.
+	 */
+	var div = document.getElementById("divscroll");
+
+	var anime = new scroll.Action(document.getElementsByClassName("internal"));
+
+	anime.reg('inside', function(el)
+	{
+		el.style['background'] = "blue";
+	})
+	.reg('outside', function(el)
+	{
+		el.style['background'] = null;
+	});
+
+};
+</script>
+
+</body>
+</html>
